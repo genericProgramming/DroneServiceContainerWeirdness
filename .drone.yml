@@ -1,0 +1,14 @@
+services:
+  riak:
+    image: basho/riak-kv
+    detach: true
+
+workspace:
+  base: /go
+  path: /src/github.com/genericProgramming/DroneServiceContainerWeirdness
+
+pipeline:
+  test:
+    image: golang:1.7.4-alpine
+    commands:
+      - go test -v
